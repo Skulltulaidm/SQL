@@ -48,10 +48,9 @@ INSERT INTO page (page_id, book_id, page_number, content) VALUES
 (13,2,2,'Contenido pagina 2'),
 (14,2,3,'Contenido pagina 3');
 
--- Verificar y eliminar el procedimiento almacenado 'GetAllBooks' si existe
 DROP PROCEDURE IF EXISTS GetAllBooks;
 
--- Crear el procedimiento almacenado para buscar todos los libros
+-- Stored Procedure para buscar todos los libros
 DELIMITER //
 CREATE PROCEDURE GetAllBooks()
 BEGIN
@@ -59,10 +58,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'GetBookById' si existe
 DROP PROCEDURE IF EXISTS GetBookById;
 
--- Crear el procedimiento almacenado para buscar un libro por ID
+-- Stored Procedure para buscar un libro por ID
 DELIMITER //
 CREATE PROCEDURE GetBookById(IN bookId INT)
 BEGIN
@@ -70,10 +68,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'InsertBook' si existe
 DROP PROCEDURE IF EXISTS InsertBook;
 
--- Crear el procedimiento almacenado para insertar un nuevo libro
+-- Stored Procedure para insertar un nuevo libro
 DELIMITER //
 CREATE PROCEDURE InsertBook(IN bookName VARCHAR(255), IN bookAuthor VARCHAR(255), IN bookImageUrl TEXT)
 BEGIN
@@ -81,10 +78,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'UpdateBook' si existe
 DROP PROCEDURE IF EXISTS UpdateBook;
 
--- Crear el procedimiento almacenado para editar un libro por ID
+-- Stored Procedure para editar un libro por ID
 DELIMITER //
 CREATE PROCEDURE UpdateBook(IN bookId INT, IN bookName VARCHAR(255), IN bookAuthor VARCHAR(255), IN bookImageUrl TEXT)
 BEGIN
@@ -92,10 +88,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'DeleteBook' si existe
 DROP PROCEDURE IF EXISTS DeleteBook;
 
--- Crear el procedimiento almacenado para borrar un libro por ID y todas sus páginas asociadas
+-- Stored Procedure para borrar un libro por ID y todas sus páginas asociadas
 DELIMITER //
 CREATE PROCEDURE DeleteBook(IN bookId INT)
 BEGIN
@@ -104,10 +99,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'GetAllPages' si existe
 DROP PROCEDURE IF EXISTS GetAllPages;
 
--- Crear el procedimiento almacenado para buscar todas las páginas
+-- Stored Procedure para buscar todas las páginas
 DELIMITER //
 CREATE PROCEDURE GetAllPages()
 BEGIN
@@ -115,10 +109,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'GetPageById' si existe
 DROP PROCEDURE IF EXISTS GetPageById;
 
--- Crear el procedimiento almacenado para buscar una página por ID
+-- Stored Procedure para buscar una página por ID
 DELIMITER //
 CREATE PROCEDURE GetPageById(IN pageId INT)
 BEGIN
@@ -126,10 +119,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'GetPagesByBookId' si existe
 DROP PROCEDURE IF EXISTS GetPagesByBookId;
 
--- Crear el procedimiento almacenado para buscar todas las páginas por book_id
+-- Stored Procedure para buscar todas las páginas por book_id
 DELIMITER //
 CREATE PROCEDURE GetPagesByBookId(IN bookId INT)
 BEGIN
@@ -137,10 +129,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'InsertPage' si existe
 DROP PROCEDURE IF EXISTS InsertPage;
 
--- Crear el procedimiento almacenado para insertar una nueva página
+-- Stored Procedure para insertar una nueva página
 DELIMITER //
 CREATE PROCEDURE InsertPage(IN bookId INT, IN pageNumber INT, IN pageContent LONGTEXT)
 BEGIN
@@ -148,10 +139,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'UpdatePage' si existe
 DROP PROCEDURE IF EXISTS UpdatePage;
 
--- Crear el procedimiento almacenado para editar una página por ID
+-- Stored Procedure para editar una página por ID
 DELIMITER //
 CREATE PROCEDURE UpdatePage(IN pageId INT, IN bookId INT, IN pageNumber INT, IN pageContent LONGTEXT)
 BEGIN
@@ -159,10 +149,9 @@ BEGIN
 END //
 DELIMITER ;
 
--- Verificar y eliminar el procedimiento almacenado 'DeletePage' si existe
 DROP PROCEDURE IF EXISTS DeletePage;
 
--- Crear el procedimiento almacenado para borrar una página por ID
+-- Stored Procedure para borrar una página por ID
 DELIMITER //
 CREATE PROCEDURE DeletePage(IN pageId INT)
 BEGIN
