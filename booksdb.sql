@@ -158,26 +158,3 @@ BEGIN
     DELETE FROM page WHERE page_id = pageId;
 END //
 DELIMITER ;
-
-
-CALL GetAllBooks();
-
-CALL GetBookById(1);
-
-CALL InsertBook('Solo Leveling I', 'Chugong', 'https://m.media-amazon.com/images/I/91X6rx1HX5L._AC_UF1000,1000_QL80_.jpg');
-
-CALL UpdateBook(1, 'Solo Leveling I', 'Chu-Gong', 'https://example.com/updated-image.jpg');
-
-CALL DeleteBook(1);
-
-CALL GetAllPages();
-
-CALL GetPageById(12);
-
-CALL GetPagesByBookId(2);
-
-CALL InsertPage(2, 1, 'una nueva era ha llegado');
-
-CALL UpdatePage(1, 2, 15, 'una nueva era ha llegado para los cazadores');
-
-CALL DeletePage(12);
